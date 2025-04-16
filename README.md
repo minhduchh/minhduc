@@ -1,2 +1,0 @@
-# minhduc
-minhduc
