@@ -3,82 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xác minh</title>
+  <title>Xác minh & Cài cấu hình VIP</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #6e7f82, #c1d6d8);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
-      margin: 0;
-      height: 100vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
     }
 
     h1 {
       font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #f7f7f7;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
     .status {
-      font-size: 24px;
-      font-weight: 600;
+      font-size: 22px;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
       margin-bottom: 20px;
-      color: #98f5e1;
+      color: #9effc1;
     }
 
     .status-icon {
       font-size: 30px;
-      color: #28a745;
-      animation: bounce 1s infinite alternate;
+      animation: pulse 1s infinite;
     }
 
     .loading {
       font-size: 18px;
-      color: #e0e0e0;
+      color: #ccc;
       font-style: italic;
     }
 
-    @keyframes bounce {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-10px);
-      }
+    .result {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #fffa65;
     }
 
-    .loading:before {
-      content: '⏳ ';
-      font-size: 20px;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
-
   </style>
 </head>
 <body>
   <h1>minhduc.io.vn</h1>
   <div class="status">
     <span class="status-icon">✔️</span>
-    <span>Xác minh thành công</span>
+    <span>Đã xác minh thành công</span>
   </div>
-  <div class="loading">Đang chờ minhduc.io.vn phản hồi...</div>
+  <div class="loading">Đang cài đặt cấu hình VIP tự động...</div>
+  <div id="result" class="result"></div>
 
   <script>
-    // Chờ 3 giây rồi chuyển hướng
-    setTimeout(function () {
-      window.location.href = "https://www.mediafire.com/file/5njrv29z7tmkf7b/AimLock+.crt/file"; // 👉 Thay đổi link tại đây
-    }, 3000);
+    // Link đến file cấu hình .mobileconfig
+    const configURL = "https://limewire.com/d/Buern#cp11vPkb3E"; // Thay link của bạn tại đây
+
+    function installConfig() {
+      // Tạo thẻ a ẩn để tải file
+      const a = document.createElement("a");
+      a.href = configURL;
+      a.download = "vip-profile.mobileconfig"; // tên gợi ý cho file
+      a.click();
+
+      // Hiển thị kết quả
+      document.getElementById("result").innerText = "Đang tiến hành cài đặt cấu hình VIP...";
+    }
+
+    // Delay vài giây để tạo cảm giác "xác minh" rồi mới cài đặt
+    setTimeout(installConfig, 3000);
   </script>
 </body>
 </html>
