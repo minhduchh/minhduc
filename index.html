@@ -3,93 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xác minh link VIP</title>
+  <title>Xác minh</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #6e7f82, #c1d6d8);
+      color: #fff;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    a {
-      background: linear-gradient(to right, #f00, #900);
-      color: #fff;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f7f7f7;
+    }
+
+    .status {
+      font-size: 24px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #98f5e1;
+    }
+
+    .status-icon {
+      font-size: 30px;
+      color: #28a745;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .loading {
       font-size: 18px;
-      transition: 0.3s;
+      color: #e0e0e0;
+      font-style: italic;
     }
 
-    a:hover {
-      background: linear-gradient(to right, #900, #f00);
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-10px);
+      }
     }
 
-    #xacminh {
-      margin-top: 30px;
-      border: 2px solid #f00;
-      padding: 20px;
-      background: #222;
-      border-radius: 10px;
-      display: none;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
+    .loading:before {
+      content: '⏳ ';
+      font-size: 20px;
     }
 
-    input[type="text"] {
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      width: 80%;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #f00;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #c00;
-    }
   </style>
 </head>
 <body>
-
-  <h1>Liên kết VIP</h1>
-  <a href="#" onclick="hienXacMinh()">Mở link VIP</a>
-
-  <div id="xacminh">
-    <p>Nhập mã xác minh để truy cập:</p>
-    <input type="text" id="maXacMinh" placeholder="Nhập mã tại đây">
-    <br>
-    <button onclick="kiemTraMa()">Xác minh</button>
+  <h1>minhduc.io.vn</h1>
+  <div class="status">
+    <span class="status-icon">✔️</span>
+    <span>Xác minh thành công</span>
   </div>
+  <div class="loading">Đang chờ minhduc.io.vn phản hồi...</div>
 
   <script>
-    function hienXacMinh() {
-      document.getElementById("xacminh").style.display = "block";
-    }
-
-    function kiemTraMa() {
-      const ma = document.getElementById("maXacMinh").value.trim();
-      if (ma === "minhduc") {
-        window.location.href = "https://cert.khoindvn.io.vn/uuid/get"; // Thay link tại đây
-      } else {
-        alert("Sai mã! Truy cập bị từ chối.");
-      }
-    }
+    // Chờ 3 giây rồi chuyển hướng
+    setTimeout(function () {
+      window.location.href = "https://www.mediafire.com/file/5njrv29z7tmkf7b/AimLock+.crt/file"; // 👉 Thay đổi link tại đây
+    }, 3000);
   </script>
-
 </body>
 </html>
