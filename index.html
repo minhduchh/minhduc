@@ -3,44 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Xác minh</title>
+  <title>Giới Thiệu Dịch Vụ VIP - Admin MinhDuc</title>
   <style>
     body {
-      font-family: system-ui, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #000000, #0f0f0f);
+      font-family: 'Segoe UI', sans-serif;
+      color: #00ffd5;
+      overflow-x: hidden;
+    }
+
+    .header {
       text-align: center;
-      padding: 60px 20px;
-      color: #333;
-    }
-    .checkmark {
-      font-size: 32px;
-      color: green;
-      display: none;
-    }
-    #status {
-      font-size: 20px;
-      margin-top: 10px;
-    }
-    #domain {
-      font-size: 24px;
+      padding: 60px 20px 20px;
+      color: #00fff7;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      font-size: 38px;
       font-weight: bold;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #00ffd5;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(10, 10, 10, 0.85);
+      border: 1px solid #00ffc3;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffc3;
+    }
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14;
+      border-bottom: 1px dashed #39ff14;
+      padding-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #e0ffff;
+    }
+
+    .features {
+      margin-top: 30px;
+    }
+
+    .feature-box {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-left: 4px solid #00ffc3;
+      box-shadow: 0 0 10px #00ffc3 inset;
+    }
+
+    .feature-box strong {
+      color: #00ffe1;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 15px;
+      color: #888;
+    }
+
+    /* Flicker Effect */
+    .flicker {
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div id="domain">cert.minhduc.io.vn</div>
-  <div class="checkmark" id="checkmark">✔️</div>
-  <div id="status">Đang xác minh cert.minhduc.io.vn...</div>
 
-  <script>
-    setTimeout(() => {
-      document.getElementById("status").innerText = "Xác minh thành công";
-      document.getElementById("checkmark").style.display = "inline-block";
+  <div class="header flicker">
+    HỆ THỐNG - ADMIN MINHDUC
+  </div>
 
-      // Đợi thêm 1.5 giây rồi chuyển đến file cấu hình
-      setTimeout(() => {
-        window.location.href = "myconfig.mobileconfig"; // ← thay bằng file của bạn
-      }, 1500);
-    }, 3000); // Chờ 3 giây đầu tiên để "xác minh"
-  </script>
+  <div class="container">
+    <div class="title">Giới thiệu hệ thống</div>
+    <p>Chào mừng bạn đến với website giới thiệu <strong>sản phầm</strong> của <span style="color:#00ffc3;">Admin MinhDuc</span>.</p>
+    <p>Chúng tôi cung cấp các gói dịch vụ cao cấp giúp tối ưu hiệu năng</p>
+
+    <div class="features">
+      <div class="title">Dịch vụ nổi bật</div>
+
+      <div class="feature-box">
+        <strong>• App :</strong> Tùy chỉnh theo từng dòng máy, bật chế độ mượt mà tối đa.
+      </div>
+      <div class="feature-box">
+        <strong>• Gói Cấu Hình :</strong> Hỗ Trợ Tăng Tần Số Quát Màn Giảm Lag 
+      </div>
+      <div class="feature-box">
+        <strong>• AimBot:</strong> Cập nhật liên tục, an toàn, không gây ban.
+      </div>
+      <div class="feature-box">
+        <strong>• Hỗ trợ 24/7:</strong> Bảo hành , cài đặt miễn phí cho khách hàng thân thiết.
+      </div>
+    </div>
+
+    <p style="margin-top: 30px;">Tất cả dịch vụ đều được mã hóa bảo mật, có chứng chỉ xác minh, hỗ trợ cả Android lẫn iOS.</p>
+
+    <div class="footer">
+      © 2025 Admin MinhDuc - Hệ Thống  DPI & Free Fire Tools
+    </div>
+  </div>
+
 </body>
 </html>
